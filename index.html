@@ -15,8 +15,12 @@ div {
 
 <script type="text/javascript">
 
+function hide(target) {
+	target.style.visibility = "hidden";
+}
+
 function hideIt() {
-	document.getElementById("x").style.visibility = "hidden";
+	hide(document.getElementById("x"));
 }
 
 </script>
