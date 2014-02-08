@@ -24,7 +24,7 @@ Tijo.fn = function(sel) {
 }
 
 Tijo.fn.prototype.init = function(sel) {
-	this.element = document.getElementById(sel);
+	this.element = document.querySelector(sel);
 	return this;
 };
 
@@ -33,7 +33,7 @@ Tijo.fn.prototype.hide = function() {
 };
 
 function hideIt() {
-	Tijo("x").hide();
+	Tijo("div").hide();
 }
 
 </script>
