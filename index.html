@@ -17,11 +17,10 @@ div {
 <script type="text/javascript">
 
 var Tijo = function(sel, context) {
-	return new Tijo.fn(sel, context);
+	return new Tijo.fn().init(sel, context);
 };
 
-Tijo.fn = function(sel) { // constructor
-	this.init(sel);
+Tijo.fn = function() { // constructor
 };
 
 Tijo.fp = Tijo.fn.prototype;
