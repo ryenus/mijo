@@ -20,10 +20,7 @@ var Tijo = function(sel, context) {
 	return new Tijo.fp.init(sel, context);
 };
 
-Tijo.fn = function() { // constructor
-};
-
-Tijo.fp = Tijo.fn.prototype;
+Tijo.fp = Tijo.prototype;
 
 Tijo.fp.init = function(sel, context) {
 	var elements = (context || document).querySelectorAll(sel);
@@ -41,7 +38,7 @@ Tijo.fp.hide = function() {
 	return this;
 };
 
-Tijo.fp.init.prototype = Tijo.fp;
+Tijo.fp.init.prototype = Tijo.prototype;
 
 function hideIt() {
 	Tijo("div").hide();
