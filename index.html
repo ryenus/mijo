@@ -17,12 +17,12 @@ div {
 <script type="text/javascript">
 
 var Tijo = function(sel, context) {
-	return new Tijo.fp.init(sel, context);
+	return new Tijo.fn.init(sel, context);
 };
 
-Tijo.fp = Tijo.prototype;
+Tijo.fn = Tijo.prototype;
 
-Tijo.fp.init = function(sel, context) {
+Tijo.fn.init = function(sel, context) {
 	var elements = (context || document).querySelectorAll(sel);
 	this.length = elements.length;
 	for (var i = 0; i < this.length; i++) {
@@ -31,14 +31,14 @@ Tijo.fp.init = function(sel, context) {
 	return this;
 };
 
-Tijo.fp.hide = function() {
+Tijo.fn.hide = function() {
 	for (var i = 0; i < this.length; i++) {
 		this[i].style.visibility = "hidden";
 	}
 	return this;
 };
 
-Tijo.fp.init.prototype = Tijo.prototype;
+Tijo.fn.init.prototype = Tijo.prototype;
 
 function hideIt() {
 	Tijo("div").hide();
