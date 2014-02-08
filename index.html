@@ -16,8 +16,13 @@ div {
 <script type="text/javascript">
 
 function Tijo(sel) {
-	this.element = document.getElementById(sel);
+	this.init(sel);
 }
+
+Tijo.prototype.init = function(sel) {
+	this.element = document.getElementById(sel);
+	return this;
+};
 
 Tijo.prototype.hide = function() {
 	this.element.style.visibility = "hidden";
