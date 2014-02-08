@@ -19,12 +19,12 @@ function Tijo(sel) {
 	this.element = document.getElementById(sel);
 }
 
-function hide(target) {
-	target.style.visibility = "hidden";
-}
+Tijo.prototype.hide = function() {
+	this.element.style.visibility = "hidden";
+};
 
 function hideIt() {
-	hide(new Tijo("x").element);
+	new Tijo("x").hide();
 }
 
 </script>
