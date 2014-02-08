@@ -16,29 +16,32 @@ div {
 
 <script type="text/javascript">
 
-var Tijo = function(sel, context) {
-	return new Tijo.fn.init(sel, context);
-};
+var Tijo = (function Tijo() {
 
-Tijo.fn = Tijo.prototype;
+	Tijo.fn = Tijo.prototype;
 
-Tijo.fn.init = function(sel, context) {
-	var elements = (context || document).querySelectorAll(sel);
-	this.length = elements.length;
-	for (var i = 0; i < this.length; i++) {
-		this[i] = elements[i];
-	}
-	return this;
-};
+	Tijo.fn.init = function(sel, context) {
+		var elements = (context || document).querySelectorAll(sel);
+		this.length = elements.length;
+		for (var i = 0; i < this.length; i++) {
+			this[i] = elements[i];
+		}
+		return this;
+	};
 
-Tijo.fn.hide = function() {
-	for (var i = 0; i < this.length; i++) {
-		this[i].style.visibility = "hidden";
-	}
-	return this;
-};
+	Tijo.fn.hide = function() {
+		for (var i = 0; i < this.length; i++) {
+			this[i].style.visibility = "hidden";
+		}
+		return this;
+	};
 
-Tijo.fn.init.prototype = Tijo.prototype;
+	Tijo.fn.init.prototype = Tijo.prototype;
+
+	return function(sel, context) {
+		return new Tijo.fn.init(sel, context);
+	};
+})();
 
 function hideIt() {
 	Tijo("div").hide();
