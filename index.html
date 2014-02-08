@@ -25,12 +25,15 @@ Tijo.fn = function(sel) {
 }
 
 Tijo.fn.prototype.init = function(sel) {
-	this.element = document.querySelector(sel);
+	this.element = document.querySelectorAll(sel);
 	return this;
 };
 
 Tijo.fn.prototype.hide = function() {
-	this.element.style.visibility = "hidden";
+	for (var i = 0, len = this.element.length; i < len; i++) {
+		this.element[i].style.visibility = "hidden";
+	}
+	return this;
 };
 
 function hideIt() {
