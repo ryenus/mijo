@@ -15,12 +15,16 @@ div {
 
 <script type="text/javascript">
 
+function Tijo(sel) {
+	this.element = document.getElementById(sel);
+}
+
 function hide(target) {
 	target.style.visibility = "hidden";
 }
 
 function hideIt() {
-	hide(document.getElementById("x"));
+	hide(new Tijo("x").element);
 }
 
 </script>
