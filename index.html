@@ -15,21 +15,25 @@ div {
 
 <script type="text/javascript">
 
-function Tijo(sel) {
+var Tijo = function(sel) {
+	return new Tijo.fn(sel);
+};
+
+Tijo.fn = function(sel) {
 	this.init(sel);
 }
 
-Tijo.prototype.init = function(sel) {
+Tijo.fn.prototype.init = function(sel) {
 	this.element = document.getElementById(sel);
 	return this;
 };
 
-Tijo.prototype.hide = function() {
+Tijo.fn.prototype.hide = function() {
 	this.element.style.visibility = "hidden";
 };
 
 function hideIt() {
-	new Tijo("x").hide();
+	Tijo("x").hide();
 }
 
 </script>
