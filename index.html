@@ -16,16 +16,16 @@ div {
 
 <script type="text/javascript">
 
-var Tijo = function(sel) {
-	return new Tijo.fn(sel);
+var Tijo = function(sel, context) {
+	return new Tijo.fn(sel, context);
 };
 
 Tijo.fn = function(sel) {
 	this.init(sel);
 }
 
-Tijo.fn.prototype.init = function(sel) {
-	this.element = document.querySelectorAll(sel);
+Tijo.fn.prototype.init = function(sel, context) {
+	this.element = (context || document).querySelectorAll(sel);
 	return this;
 };
 
