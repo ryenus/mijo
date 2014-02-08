@@ -20,11 +20,13 @@ var Tijo = function(sel, context) {
 	return new Tijo.fn(sel, context);
 };
 
-Tijo.fn = function(sel) {
+Tijo.fn = function(sel) { // constructor
 	this.init(sel);
-}
+};
 
-Tijo.fn.prototype.init = function(sel, context) {
+Tijo.fp = Tijo.fn.prototype;
+
+Tijo.fp.init = function(sel, context) {
 	var elements = (context || document).querySelectorAll(sel);
 	this.length = elements.length;
 	for (var i = 0; i < this.length; i++) {
@@ -33,7 +35,7 @@ Tijo.fn.prototype.init = function(sel, context) {
 	return this;
 };
 
-Tijo.fn.prototype.hide = function() {
+Tijo.fp.hide = function() {
 	for (var i = 0; i < this.length; i++) {
 		this[i].style.visibility = "hidden";
 	}
