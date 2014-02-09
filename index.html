@@ -16,29 +16,27 @@ div {
 
 <script type="text/javascript">
 
-var Tijo = (function() {
-	var init = function(sel, context) {
-		var elements = (context || document).querySelectorAll(sel);
-		this.length = elements.length;
+var Tijo = function(sel, context) {
+	return new Tijo.init(sel, context);
+};
+
+Tijo.init = function(sel, context) {
+	var elements = (context || document).querySelectorAll(sel);
+	this.length = elements.length;
+	for (var i = 0; i < this.length; i++) {
+		this[i] = elements[i];
+	}
+	return this;
+};
+
+Tijo.init.prototype = {
+	hide: function() {
 		for (var i = 0; i < this.length; i++) {
-			this[i] = elements[i];
+			this[i].style.visibility = "hidden";
 		}
 		return this;
-	};
-
-	init.prototype = this.prototype = {
-		hide: function() {
-			for (var i = 0; i < this.length; i++) {
-				this[i].style.visibility = "hidden";
-			}
-			return this;
-		}
-	};
-
-	return function(sel, context) {
-		return new init(sel, context);
-	};
-})();
+	}
+};
 
 function hideIt() {
 	Tijo("div").hide();
