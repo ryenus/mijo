@@ -16,11 +16,11 @@ div {
 
 <script type="text/javascript">
 
-var Tijo = function(sel, context) {
-	return new Tijo.init(sel, context);
+var Mijo = function(sel, context) {
+	return new Mijo.init(sel, context);
 };
 
-Tijo.init = function(sel, context) {
+Mijo.init = function(sel, context) {
 	var elements = (context || document).querySelectorAll(sel);
 	this.length = elements.length;
 	for (var i = 0; i < this.length; i++) {
@@ -29,7 +29,7 @@ Tijo.init = function(sel, context) {
 	return this;
 };
 
-Tijo.init.prototype = {
+Mijo.init.prototype = {
 	hide: function() {
 		for (var i = 0; i < this.length; i++) {
 			this[i].style.visibility = "hidden";
@@ -39,7 +39,7 @@ Tijo.init.prototype = {
 };
 
 function hideIt() {
-	Tijo("div").hide();
+	Mijo("div").hide();
 }
 
 </script>
